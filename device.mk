@@ -309,6 +309,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_large_cache_height=2048
+    
+PRODUCT_PROPERTY_OVERRIDES += \
+   dalvik.vm.heapgrowthlimit=256m \
+   dalvik.vm.heapminfree=2m 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
