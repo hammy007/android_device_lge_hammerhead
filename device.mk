@@ -134,6 +134,14 @@ PRODUCT_PACKAGES += \
     librs_jni
 
 PRODUCT_PACKAGES += \
+    gralloc.msm8084 \
+    hwcomposer.msm8084 \
+    memtrack.msm8084 \
+    libgenlock \
+    libqdutils \
+    libqdMetaData
+
+PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.mapper@2.0-impl \
     gralloc.msm8974 \
