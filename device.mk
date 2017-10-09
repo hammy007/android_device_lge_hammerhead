@@ -198,8 +198,8 @@ PRODUCT_PACKAGES += \
     power.msm8974
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    HammerheadDoze
+#PRODUCT_PACKAGES += \
+#   HammerheadDoze
 
 # Thermal HAL
 PRODUCT_PACKAGES += \
