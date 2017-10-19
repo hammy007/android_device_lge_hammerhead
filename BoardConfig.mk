@@ -84,9 +84,6 @@ USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_HWC2 := true
-TARGET_USES_NEW_ION_API :=true
 TARGET_USES_ION := true
 
 # Enable dex-preoptimization to speed up first boot sequence
