@@ -98,8 +98,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/lge/hammerhead/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
+    device/lge/hammerhead/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+    device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/vendor/etc/libnfc-brcm-20791b05.conf
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
