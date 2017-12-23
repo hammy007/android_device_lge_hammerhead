@@ -45,16 +45,6 @@ extern "C" {
 #include <mm_jpeg_interface.h>
 }
 
-#ifdef CDBG
-#undef CDBG
-#endif //#ifdef CDBG
-#define CDBG(fmt, args...) ALOGV(fmt, ##args)
-
-#ifdef CDBG_HIGH
-#undef CDBG_HIGH
-#endif //#ifdef CDBG_HIGH
-#define CDBG_HIGH(fmt, args...) ALOGD(fmt, ##args)
-
 using namespace android;
 
 namespace qcamera {
@@ -208,9 +198,6 @@ public:
     int getJpegQuality();
     int calcMaxJpegSize();
     QCamera3Exif *getExifData();
-    static void getFlashInfo(const int cameraId,
-            bool& hasFlash,
-            char (&flashNode)[QCAMERA_MAX_FILEPATH_LENGTH]);
 public:
     static int kMaxInFlight;
 private:

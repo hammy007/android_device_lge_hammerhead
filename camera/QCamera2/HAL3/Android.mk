@@ -12,7 +12,6 @@ LOCAL_SRC_FILES := \
         QCamera3PostProc.cpp \
         QCamera3VendorTags.cpp \
         ../util/QCameraCmdThread.cpp \
-        ../util/QCameraFlash.cpp \
         ../util/QCameraQueue.cpp
 
 LOCAL_CFLAGS := -Wall -Werror
