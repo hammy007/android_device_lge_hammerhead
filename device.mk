@@ -180,9 +180,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/lge/hammerhead/audio_policy.conf:system/etc/audio_policy.conf \
-    device/lge/hammerhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/lge/hammerhead/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/hammerhead/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    device/lge/hammerhead/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
+    device/lge/hammerhead/mixer_paths.xml:system/vendor/etc/mixer_paths.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
