@@ -22,8 +22,6 @@
 # Kernel Inline
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := unicornblood_defconfig
-TARGET_VARIANT_CONFIG := unicornblood_defconfig
-TARGET_SELINUX_CONFIG := unicornblood_defconfig
 
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -96,10 +94,10 @@ PRODUCT_COPY_FILES += \
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/lge/hammerhead/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/vendor/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/vendor/etc/permissions/android.hardware.nfc.hce.xml \
+    device/lge/hammerhead/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/vendor/etc/libnfc-brcm-20791b05.conf
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
@@ -179,10 +177,10 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/audio_effects.conf:system/etc/audio_effects.conf \
-    device/lge/hammerhead/audio_policy.conf:system/etc/audio_policy.conf \
-    device/lge/hammerhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/lge/hammerhead/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/hammerhead/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/lge/hammerhead/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    device/lge/hammerhead/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
+    device/lge/hammerhead/mixer_paths.xml:system/vendor/etc/mixer_paths.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -205,10 +203,6 @@ PRODUCT_PACKAGES += \
 # Thermal HAL
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
-
-# Doze mode
-PRODUCT_PACKAGES += \
-    HammerheadDoze
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
@@ -464,10 +458,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.delay=0 \
     ring.delay=0
 
-# DU Updater
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-ro.du.updater=hammerhead
-
-$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
