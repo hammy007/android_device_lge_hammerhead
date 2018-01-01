@@ -112,8 +112,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
 BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 
-HAVE_ADRENO_SOURCE:= false
-
 DEVICE_MANIFEST_FILE := device/lge/hammerhead/manifest.xml
 DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
 
@@ -130,19 +128,7 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 # Needs text relocations for libmmjpeg
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS:= true
 
-ifeq ($(USE_SVELTE_KERNEL),true)
-MALLOC_SVELTE := true
-endif
-
-USE_CLANG_PLATFORM_BUILD := true
-
--include vendor/lge/hammerhead/BoardConfigVendor.mk
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
 # Enable workaround for slow rom flash
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
+-include vendor/lge/hammerhead/BoardConfigVendor.mk
