@@ -186,7 +186,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.device@3.2-impl-binderized \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
