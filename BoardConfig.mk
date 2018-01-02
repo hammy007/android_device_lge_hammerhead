@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Toolchain
+TARGET_GCC_VERSION_EXP := 4.9
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-gnueabi-
+KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-gnueabi/bin/"
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -30,6 +34,9 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 
 TOUCH_BOOST_DEBUG := false
+
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -109,8 +116,6 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
 BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 
-HAVE_ADRENO_SOURCE:= false
-
 DEVICE_MANIFEST_FILE := device/lge/hammerhead/manifest.xml
 DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
 
@@ -126,19 +131,7 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 # Needs text relocations for libmmjpeg
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS:= true
 
-ifeq ($(USE_SVELTE_KERNEL),true)
-MALLOC_SVELTE := true
-endif
-
-USE_CLANG_PLATFORM_BUILD := true
-
--include vendor/lge/hammerhead/BoardConfigVendor.mk
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
 # Enable workaround for slow rom flash
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
+-include vendor/lge/hammerhead/BoardConfigVendor.mk
