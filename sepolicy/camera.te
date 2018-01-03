@@ -8,7 +8,7 @@ init_daemon_domain(camera)
 # Interact with other media devices
 allow camera video_device:dir search;
 allow camera { gpu_device video_device }:chr_file rw_file_perms;
-allow camera { surfaceflinger cameraserver mediaserver hal_graphics_allocator }:fd use;
+allow camera { surfaceflinger cameraserver mediaserver hal_graphics_allocator hal_camera_default }:fd use;
 hal_client_domain(camera, hal_graphics_allocator)
 
 allow camera self:capability { sys_nice };
@@ -53,3 +53,6 @@ allow camera storage_file:lnk_file { getattr read write open };
 allow camera mnt_user_file:dir { getattr read write open search };
 allow camera mnt_user_file:lnk_file { getattr read write open };
 allow camera fuse:dir { getattr read write open search };
+
+allow camera hal_camera_default:fd use;
+allow camera untrusted_app_25:fd use;
