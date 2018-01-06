@@ -239,6 +239,10 @@ PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     NfcNci \
     Tag
+    
+# OMX
+PRODUCT_PACKAGES += \
+android.hardware.media.omx@1.0
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
